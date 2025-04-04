@@ -19,55 +19,7 @@ Transação SE09: é um modo de trabalho para organizar as change requests em de
 
 # Fluxo de transport de Request
 
-Em geral o fluxo de uma Transport request é o seguinte:
-
-+--------------------------------+
-| [Início]                       |
-+--------------------------------+
-         |
-         v
-+--------------------------------+
-| 1. Desenvolver e testar a      |
-|    request no ambiente DEV     |
-|    com dados de teste          |
-+--------------------------------+
-         |
-         v
-+--------------------------------+
-| 2. Liberar a request no        |
-|    ambiente DEV para a fila    |
-|    de transporte do QAS        |
-+--------------------------------+
-         |
-         v
-+--------------------------------+
-| 3. Importar a request no       |
-|    ambiente QAS                |
-+--------------------------------+
-         |
-         v
-+--------------------------------+
-| 4. Realizar testes no QAS para |
-|    verificar alterações e      |
-|    efeitos colaterais          |
-+--------------------------------+
-         |
-         v
-+--------------------------------+
-| 5. Importar a request no       |
-|    ambiente PRD                |
-+--------------------------------+
-         |
-         v
-+--------------------------------+
-| 6. Liberar as alterações para  |
-|    utilização                  |
-+--------------------------------+
-         |
-         v
-+--------------------------------+
-| [Fim]                          |
-+--------------------------------+
+Em geral o fluxo de uma Transport request é o seguinte: 
 
 
 
