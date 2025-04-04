@@ -1,5 +1,6 @@
 # SAP Transport Request - Dicas simples de utilização
 
+O que é um transport de Request?
 
 Uma Iransport request nao e nada mais do que um conjunto de alteraçoes/criaçoes de 'funcionalidades' de um ambiente SAP para outro através do que chamamos de um objeto de
 transporte. Num objeto de transporte podem conter alterações/criações para tabelas, programas, Jobs e processos.
