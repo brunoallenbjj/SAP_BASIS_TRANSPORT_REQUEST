@@ -1,6 +1,6 @@
 **Procedimento para Transportar uma Request SAP via STMS**
 
-# **Transporte de Request SAP via STMS**  
+**Transporte de Request SAP via STMS**  
 **Objetivo**: Guia passo a passo para transportar uma request (ex: `DSK1223123`) entre sistemas SAP utilizando o STMS.  
 
 ---
@@ -12,24 +12,24 @@
 
 ---
 
-## **2. Procedimento**  
+**2. Procedimento**  
 
-### **2.1. Verificar a Request no Sistema de Origem**  
-```abap
+**2.1. Verificar a Request no Sistema de Origem**  
+
 1. Executar transação SE10 ou SE01.  
 2. Buscar a request (ex: DSK1223123).  
 3. Confirmar status "Released".  
 
 
 
-# **2.2. Acessar o STMS**
+**2.2. Acessar o STMS**
 
 1. Executar transação STMS.  
 2. Navegar para: Overview → Transport Routes.  
 3. Validar se o sistema de destino está na rota correta.  
 
 
-# **2.3. Importar a Request**
+**2.3. Importar a Request**
 
 Opção A: Importação Imediata (QAS/Testes)
 
@@ -46,7 +46,7 @@ Opção B: Agendamento (Produção)
    - Data/horário (ex: 02:00 AM).  
    - Opções: Overwrite Originals? (X para SIM).  
 
-# **2.4. Monitoramento**
+**2.4. Monitoramento**
 
 1. Verificar logs:  
    - STMS → Imports → Logs.  
@@ -56,14 +56,14 @@ Opção B: Agendamento (Produção)
    - Repetir com "Ignore Inconsistencies" se necessário.  
 
 
-## **3. Pós-Transporte
+**3. Pós-Transporte
 
 1. SE10 → Histórico de imports.  
 2. SE16 (TABU) → Checar tabelas modificadas.  
 3. SE38/SE24 → Validar programas/classes (se aplicável).  
 
 
-## **4. Troubleshooting
+**4. Troubleshooting
 
 Problema	                         Solução
 
@@ -72,7 +72,7 @@ Objeto bloqueado	SM12             Liberar locks
 Erro durante import	               Repetir com "Ignore Inconsistencies"
 
 
-## **5. Recomendações
+**5. Recomendações
 
 🔹 Sempre testar em QAS antes de PRD.
 
