@@ -5,7 +5,8 @@
 
 ---
 
-## **1. Pré-requisitos**  
+**1. Pré-requisitos**  
+
 - ✅ Request **liberada** (status `Released`).  
 - ✅ Acesso à transação **STMS** e permissões de transporte.  
 - ✅ Rota de transporte configurada (ex: `DEV → QAS → PRD`).  
