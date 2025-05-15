@@ -35,6 +35,7 @@ Esses objetos podem conter alterações ou criações em:
 | `SE01`   | Administração de requests por nome ou usuário. |
 | `SE03`   | Transport Organizer Tools. |
 | `SE09`   | Organização das change requests em desenvolvimento. |
+| `STMS`   | Gerenciamento e importação dos transportes entre ambientes SAP. |
 
 ---
 
@@ -46,7 +47,21 @@ O fluxo padrão de um Transport Request no SAP segue geralmente os seguintes pas
 2. **Atribuição dos objetos modificados/criados** à request.
 3. **Liberação da task** (subnível da request).
 4. **Liberação da request principal**.
-5. **Importação nos ambientes subsequentes** (QA, Produção).
+5. **Importação nos ambientes subsequentes** (QA, Produção), via **STMS**.
+
+---
+
+## 🚚 STMS – SAP Transport Management System
+
+A **STMS** é a transação responsável pela **importação dos transportes** entre os ambientes SAP. Após a **liberação (release)** de uma request no ambiente de desenvolvimento, ela se torna visível na STMS para ser importada nos demais ambientes (como QA e PRD).
+
+### Funcionalidades da STMS:
+
+- Visualização da **fila de importação** por sistema.
+- Execução de **importações individuais ou em massa**.
+- Verificação do **histórico de transportes**.
+- **Configuração de rotas** de transporte entre os ambientes SAP.
+- **Logs detalhados** de sucesso ou erro após a importação.
 
 ---
 
@@ -60,4 +75,6 @@ Ideal para iniciantes ou profissionais que desejam uma referência prática.
 ## 📬 Contribuições
 
 Fique à vontade para contribuir com melhorias, correções ou sugestões para este guia!
+
+
 
