@@ -1,37 +1,63 @@
-# SAP Transport Request - Dicas simples de utilização
+# SAP Transport Request - Dicas Simples de Utilização
 
-O que é um transport de Request?
+## 📌 O que é um Transport Request?
 
-Uma Iransport request nao e nada mais do que um conjunto de alteraçoes/criaçoes de 'funcionalidades' de um ambiente SAP para outro através do que chamamos de um objeto de
-transporte. Num objeto de transporte podem conter alterações/criações para tabelas, programas, Jobs e processos.
+Um **Transport Request** nada mais é do que um conjunto de alterações ou criações de funcionalidades que são movidas de um ambiente SAP para outro, por meio de um **objeto de transporte**.
 
+Esses objetos podem conter alterações ou criações em:
 
-Existem Dois tipos de Request:
+- Tabelas  
+- Programas  
+- Jobs  
+- Processos  
 
-Workbench Requests: 
+---
 
-As solicitações do Workbench e as tarefas a elas atribuídas são normalmente usadas para registrar alterações em objetos do Repositório e Customizing para todos os clientes.
+## 📂 Tipos de Transport Request
 
-Customizing Requests:
+### 🔧 Workbench Requests
 
-As solicitações de Customizing registram configurações de Customizing específicas do cliente feitas em um único cliente (o cliente de origem da solicitação).
+- Usados para registrar **alterações em objetos do Repositório** e **Customizing** para **todos os clientes**.
+- Incluem objetos como programas, classes, funções, tabelas do dicionário, etc.
 
+### ⚙️ Customizing Requests
 
-# Transações utilizadas para Transport de Request
+- Registram **configurações específicas do cliente**.
+- Referem-se apenas ao cliente de origem da solicitação.
+- Utilizados para alterações feitas via SPRO (Customizing).
 
-Transação SE01: Transação para administrar requests por nome ou usuário.
+---
 
-Transação SE03: Transport organizer Tools
+## 🔁 Transações SAP Relacionadas
 
-Transação SE09: é um modo de trabalho para organizar as change requests em desenvolvimento.
+| Transação | Descrição |
+|----------|-----------|
+| `SE01`   | Administração de requests por nome ou usuário. |
+| `SE03`   | Transport Organizer Tools. |
+| `SE09`   | Organização das change requests em desenvolvimento. |
 
+---
 
+## 🔄 Fluxo Geral de um Transport Request
 
+O fluxo padrão de um Transport Request no SAP segue geralmente os seguintes passos:
 
-# Fluxo de transport de Request
+1. **Criação da solicitação** (request), seja Workbench ou Customizing.
+2. **Atribuição dos objetos modificados/criados** à request.
+3. **Liberação da task** (subnível da request).
+4. **Liberação da request principal**.
+5. **Importação nos ambientes subsequentes** (QA, Produção).
 
-Em geral o fluxo de uma Transport request é o seguinte: 
+---
 
+## 📝 Observações
 
+Este repositório tem como objetivo fornecer dicas rápidas e diretas para facilitar o entendimento e uso das transport requests no ambiente SAP.  
+Ideal para iniciantes ou profissionais que desejam uma referência prática.
 
+---
+
+## 📬 Contribuições
+
+Fique à vontade para contribuir com melhorias, correções ou sugestões para este guia!
 
