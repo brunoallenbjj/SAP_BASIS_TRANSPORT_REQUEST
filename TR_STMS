@@ -1,1 +1,84 @@
+# **Procedimento para Transportar uma Request SAP via STMS**
+
+# **Transporte de Request SAP via STMS**  
+**Objetivo**: Guia passo a passo para transportar uma request (ex: `DSK1223123`) entre sistemas SAP utilizando o STMS.  
+
+---
+
+## **1. Pré-requisitos**  
+- ✅ Request **liberada** (status `Released`).  
+- ✅ Acesso à transação **STMS** e permissões de transporte.  
+- ✅ Rota de transporte configurada (ex: `DEV → QAS → PRD`).  
+
+---
+
+## **2. Procedimento**  
+
+### **2.1. Verificar a Request no Sistema de Origem**  
+```abap
+1. Executar transação SE10 ou SE01.  
+2. Buscar a request (ex: DSK1223123).  
+3. Confirmar status "Released".  
+
+
+
+# **2.2. Acessar o STMS**
+
+1. Executar transação STMS.  
+2. Navegar para: Overview → Transport Routes.  
+3. Validar se o sistema de destino está na rota correta.  
+
+
+# **2.3. Importar a Request**
+
+Opção A: Importação Imediata (QAS/Testes)
+
+1. STMS → Imports → Selecionar sistema destino (ex: QAS).  
+2. Clicar em "Import Queue" (Ctrl+F12).  
+3. Localizar a request (DSK1223123).  
+4. Selecionar → "Import Request" (ou "Import All" para múltiplas).  
+
+Opção B: Agendamento (Produção)
+
+1. STMS → Imports → Selecionar sistema (PRD).  
+2. Clicar em "Schedule Import".  
+3. Definir:  
+   - Data/horário (ex: 02:00 AM).  
+   - Opções: Overwrite Originals? (X para SIM).  
+
+# **2.4. Monitoramento**
+
+1. Verificar logs:  
+   - STMS → Imports → Logs.  
+   - SM37 (jobs em background).  
+2. Em caso de erro:  
+   - Analisar STMS Log ou SLG1.  
+   - Repetir com "Ignore Inconsistencies" se necessário.  
+
+
+## **3. Pós-Transporte
+
+1. SE10 → Histórico de imports.  
+2. SE16 (TABU) → Checar tabelas modificadas.  
+3. SE38/SE24 → Validar programas/classes (se aplicável).  
+
+
+## **4. Troubleshooting
+
+Problema	                         Solução
+
+Request não aparece na fila	       Verificar se foi liberada (SE10)
+Objeto bloqueado	SM12             Liberar locks
+Erro durante import	               Repetir com "Ignore Inconsistencies"
+
+
+## **5. Recomendações
+
+🔹 Sempre testar em QAS antes de PRD.
+
+🔹 Agendar imports para PRD fora do horário comercial.
+
+🔹 Documentar erros e soluções para referência futura.
+
+
 
